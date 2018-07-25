@@ -32,13 +32,13 @@ public class ImagePanel extends JPanel {
         File file = new File(path);
         try {
             BufferedImage image = ImageIO.read(file);
-            Font f = new Font("dialog",Font.PLAIN,18);
+            Font f = new Font("dialog", Font.PLAIN, 18);
             g.setFont(f);
-            g.drawString("Orignal",10,20);
+            g.drawString("Orignal", 10, 20);
             g.drawImage(image, 10, 30, this);
             weight = image.getWidth();
             height = image.getHeight();
-            setPreferredSize(new Dimension(weight+20, height+40));
+            setPreferredSize(new Dimension(weight + 20, height + 40));
         } catch (IOException ex) {
             Logger.getLogger(ImagePanel.class.getName()).log(Level.SEVERE, null, ex);
         }

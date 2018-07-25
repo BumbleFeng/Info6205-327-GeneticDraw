@@ -106,7 +106,7 @@ public class GeneticAlgorithmTest {
             assertTrue(p[j].getDifference() < p[j + 1].getDifference());
         }
     }
-    
+
     @Test
     public void crossoverTest() {
         Chromosome a = new Chromosome(100, 3);
@@ -125,14 +125,14 @@ public class GeneticAlgorithmTest {
         assertEquals(a, children[1]);
         assertEquals(children[0], children[1]);
     }
-    
+
     @Test
     public void testNext() {
         ga.evaluate();
         double best = ga.getBest().getDifference();
         ga.next();
         ga.evaluate();
-        assertTrue(ga.getBest().getDifference()<=best);
+        assertTrue(ga.getBest().getDifference() <= best);
     }
 
     @Test

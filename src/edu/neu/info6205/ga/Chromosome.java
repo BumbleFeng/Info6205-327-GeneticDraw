@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
  * @author BumbleBee
  */
 public class Chromosome implements Comparable<Chromosome> {
-    
+
     private static final Logger logger = LogManager.getLogger(Chromosome.class.getName());
     private int num;
     private int pointNum;
@@ -56,9 +56,9 @@ public class Chromosome implements Comparable<Chromosome> {
         Arrays.sort(c.genes);
         return c;
     }
-    
+
     @Override
-    public Chromosome clone(){
+    public Chromosome clone() {
         logger.info("Clone Chromosome: " + this);
         Chromosome c = new Chromosome(this.num, this.pointNum);
         for (int i = 0; i < this.num; i++) {
@@ -67,7 +67,7 @@ public class Chromosome implements Comparable<Chromosome> {
         c.difference = this.difference;
         return c;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -84,13 +84,13 @@ public class Chromosome implements Comparable<Chromosome> {
         return this.num == that.num
                 && Arrays.equals(this.genes, that.genes);
     }
-    
+
     @Override
-    public int hashCode(){
-        return 31*num
-                +31*Arrays.hashCode(genes);
+    public int hashCode() {
+        return 31 * num
+                + 31 * Arrays.hashCode(genes);
     }
-    
+
     @Override
     public int compareTo(Chromosome that) {
         return Double.compare(this.difference, that.difference);
@@ -103,5 +103,5 @@ public class Chromosome implements Comparable<Chromosome> {
     public void setDifference(double difference) {
         this.difference = difference;
     }
-    
+
 }
